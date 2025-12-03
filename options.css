@@ -1,0 +1,251 @@
+:root {
+    --bg-app: #f9fafb;
+    --bg-panel: #ffffff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --primary: #2563eb;
+    --border: #e5e7eb;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-app);
+    color: var(--text-main);
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: var(--bg-panel);
+    border-right: 1px solid var(--border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: var(--primary);
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-bottom: 8px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    background: #f3f4f6;
+    color: var(--text-main);
+}
+
+.nav-links a.active {
+    background: #eff6ff;
+    color: var(--primary);
+}
+
+.save-status {
+    margin-top: auto;
+    font-size: 12px;
+    color: #10b981;
+    height: 20px;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    padding: 40px;
+    max-width: 800px;
+}
+
+.settings-section {
+    margin-bottom: 48px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Controls */
+.control-group {
+    margin-bottom: 24px;
+}
+
+.select-input {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+/* Sites Grid */
+.sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.site-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    background: #f3f4f6;
+    padding: 4px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.tab-btn {
+    padding: 6px 16px;
+    border: none;
+    background: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.tab-btn.active {
+    background: white;
+    color: var(--text-main);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.panel {
+    display: none;
+    background: var(--bg-panel);
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.panel.active {
+    display: block;
+}
+
+/* Theme Grid */
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+}
+
+.theme-item {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.theme-item:hover {
+    transform: translateY(-2px);
+}
+
+.theme-item.selected {
+    border-color: var(--primary);
+}
+
+.theme-preview {
+    height: 80px;
+    width: 100%;
+}
+
+.theme-name {
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+    background: #f9fafb;
+}
+
+/* Gradient & Image Controls */
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.preview-box {
+    height: 120px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-top: 12px;
+}
+
+/* Toggles */
+.toggles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.auto-config {
+    margin-top: 12px;
+    padding: 16px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    display: none;
+    /* Hidden by default */
+}
+
+.auto-config.visible {
+    display: block;
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+}

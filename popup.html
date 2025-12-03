@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="toggle-row">
+        <span id="lbl-enable" class="label-main">Enable Enhancement</span>
+        <label class="switch">
+          <input type="checkbox" id="master-switch">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <section class="presets">
+      <div class="preset-group">
+        <button class="preset-btn" data-preset="focus" id="btn-focus">
+          <span class="icon">🧘</span>
+          <span class="name" id="lbl-focus">Focus</span>
+        </button>
+        <button class="preset-btn" data-preset="night" id="btn-night">
+          <span class="icon">🌙</span>
+          <span class="name" id="lbl-night">Night</span>
+        </button>
+        <button class="preset-btn" data-preset="inspiration" id="btn-inspiration">
+          <span class="icon">✨</span>
+          <span class="name" id="lbl-inspiration">Inspiration</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <footer>
+      <button id="btn-settings" class="link-btn">Open Full Settings</button>
+    </footer>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

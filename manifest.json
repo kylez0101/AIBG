@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "version": "1.0.0",
+  "default_locale": "en",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Chat Enhancer"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.google.com/*",
+    "*://*.openai.com/*",
+    "*://chatgpt.com/*",
+    "*://*.claude.ai/*",
+    "*://*.moonshot.cn/*",
+    "*://*.hunyuan.tencent.com/*",
+    "*://*.deepseek.com/*",
+    "*://*.aliyun.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.openai.com/*",
+        "*://chatgpt.com/*",
+        "*://*.claude.ai/*",
+        "*://*.moonshot.cn/*",
+        "*://*.hunyuan.tencent.com/*",
+        "*://*.deepseek.com/*",
+        "*://*.aliyun.com/*"
+      ],
+      "js": ["i18n.js", "contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

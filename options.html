@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Chat Enhancer Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <div class="layout">
+        <!-- Sidebar / Nav -->
+        <nav class="sidebar">
+            <h1 class="app-title" id="app-title">AI Chat Enhancer</h1>
+            <ul class="nav-links">
+                <li><a href="#section-general" class="active" id="nav-general">General</a></li>
+                <li><a href="#section-background" id="nav-background">Background</a></li>
+                <li><a href="#section-comfort" id="nav-comfort">Comfort</a></li>
+            </ul>
+            <div class="save-status" id="save-status"></div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <!-- General Section -->
+            <section id="section-general" class="settings-section">
+                <h2 id="title-language">Language</h2>
+                <div class="control-group">
+                    <select id="lang-select" class="select-input">
+                        <option value="en">English</option>
+                        <option value="zh">简体中文</option>
+                    </select>
+                </div>
+
+                <h2 id="title-sites">Enabled Sites</h2>
+                <div class="sites-grid" id="sites-list">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Background Section -->
+            <section id="section-background" class="settings-section">
+                <h2 id="title-background">Background & Theme</h2>
+
+                <!-- Mode Selector -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-mode="recommended" id="tab-rec">Recommended</button>
+                    <button class="tab-btn" data-mode="gradient" id="tab-grad">Gradient</button>
+                    <button class="tab-btn" data-mode="solid" id="tab-solid">Solid</button>
+                    <button class="tab-btn" data-mode="image" id="tab-img">Image</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Recommended -->
+                    <div id="panel-recommended" class="panel active">
+                        <div class="theme-grid" id="rec-themes">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+
+                    <!-- Gradient -->
+                    <div id="panel-gradient" class="panel">
+                        <div class="control-row">
+                            <input type="color" id="grad-color-1" value="#ffffff">
+                            <input type="color" id="grad-color-2" value="#e0e7ff">
+                            <input type="range" id="grad-angle" min="0" max="360" value="135">
+                            <span id="grad-angle-val">135deg</span>
+                        </div>
+                        <div class="preview-box" id="grad-preview"></div>
+                    </div>
+
+                    <!-- Solid -->
+                    <div id="panel-solid" class="panel">
+                        <input type="color" id="solid-color" value="#f8f9fa">
+                    </div>
+
+                    <!-- Image -->
+                    <div id="panel-image" class="panel">
+                        <input type="file" id="img-upload" accept="image/*">
+                        <div class="preview-box" id="img-preview-box"
+                            style="background-size: cover; background-position: center;"></div>
+                        <button id="btn-clear-img" class="secondary-btn">Clear Image</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comfort Section -->
+            <section id="section-comfort" class="settings-section">
+                <h2 id="title-comfort">Visual Comfort</h2>
+                <div class="toggles-list">
+                    <label class="toggle-row">
+                        <span id="lbl-lineheight">Increase Line Height</span>
+                        <input type="checkbox" id="chk-lineheight">
+                    </label>
+                    <label class="toggle-row">
+                        <span id="lbl-contrast">Softer Contrast</span>
+                        <input type="checkbox" id="chk-contrast">
+                    </label>
+                    <label class="toggle-row">
+                        <span id="lbl-fontsize">Larger Font</span>
+                        <input type="checkbox" id="chk-fontsize">
+                    </label>
+                </div>
+
+                <h2 id="title-auto">Auto Day/Night</h2>
+                <label class="toggle-row">
+                    <span id="lbl-auto-enable">Enable Auto Switch</span>
+                    <input type="checkbox" id="chk-auto">
+                </label>
+                <div class="auto-config" id="auto-config-area">
+                    <div class="time-row">
+                        <span>Day Preset (08:00 - 18:00)</span>
+                        <select id="sel-day-preset">
+                            <option value="focus">Focus</option>
+                            <option value="inspiration">Inspiration</option>
+                        </select>
+                    </div>
+                    <div class="time-row">
+                        <span>Night Preset (18:00 - 08:00)</span>
+                        <select id="sel-night-preset">
+                            <option value="night">Night</option>
+                            <option value="focus">Focus</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="options.js"></script>
+</body>
+
+</html>

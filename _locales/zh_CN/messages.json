@@ -1,0 +1,10 @@
+{
+    "appName": {
+        "message": "AI 聊天增强助手",
+        "description": "The name of the extension"
+    },
+    "appDesc": {
+        "message": "自定义 AI 聊天工具的背景与阅读体验。",
+        "description": "The description of the extension"
+    }
+}

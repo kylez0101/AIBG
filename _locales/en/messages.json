@@ -1,0 +1,10 @@
+{
+    "appName": {
+        "message": "AI Chat Enhancer",
+        "description": "The name of the extension"
+    },
+    "appDesc": {
+        "message": "Customize backgrounds and reading comfort for AI chat tools.",
+        "description": "The description of the extension"
+    }
+}
